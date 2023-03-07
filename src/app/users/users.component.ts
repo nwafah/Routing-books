@@ -10,9 +10,14 @@ import { UsersService } from '../users-data/users.service';
 })
 export class UsersComponent implements OnInit {
   usersList$!:Observable<Users[]>;
+  fullUsersList$!:Observable<Users[]>;
+  inputSearch!:string;
+
   constructor(private usersService:UsersService){}
+  
   ngOnInit(): void {
     this.usersList$=this.usersService.getAllUsers();
+    this.fullUsersList$=this.usersService.getAllUsers();
   }
 
 

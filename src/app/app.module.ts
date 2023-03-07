@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { UsersDetailsComponent } from './users/users-details/users-details.compo
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { SignupComponent } from './authentication/signup/signup.component';
 import { LoginComponent } from './authentication/login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { LoginComponent } from './authentication/login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    [TooltipModule.forRoot()]
+    [TooltipModule.forRoot()],
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

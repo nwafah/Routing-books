@@ -1,2 +1,5 @@
-<app-users-list [users$]="usersList$"></app-users-list>
+<div class="container">
+<input type="text" class="form-control" [(ngModel)]="inputSearch" placeholder="Search Users Here">
+</div>
+<app-users-list [users$]="usersList$" [inputSearch]="inputSearch" [fullUsersList$]="fullUsersList$"></app-users-list>
 <router-outlet></router-outlet>

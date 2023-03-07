@@ -1,0 +1,12 @@
+<div style="margin:1rem;background-color: rgba(86, 86, 228, 0.264);">
+    <div class="card-columns">
+        <div class="card bg-light mb-3" *ngFor="let course of courseList$|async">
+            <div class="card-header">{{ course.courseName }}</div>
+            <img class="card-img-top" width="80" height="100" [src]="course.path" />
+            <div class="card-body pt-1" style="height: 5rem"> {{ course.courseDescription }} </div>
+            <div class="card-footer">
+                <button class="btn btn-secondary">Enroll</button>
+            </div>
+        </div>
+    </div>
+</div>

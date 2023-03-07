@@ -1,0 +1,16 @@
+<div class="container" style="padding-top: 1rem">
+    <div class="row">
+    <ul class="list-group" *ngFor="let user of users$ | async">
+        <li class="list-group-item">
+            <span class="pull-left ">
+                <img src="../../assets/222.jpg" style="border: 1px solid silver; border-radius: 50%" width="50"
+                    height="50" />
+            </span>
+            <h6 style="padding-left: 2rem; display: inline;">{{ user.name }}</h6>
+            <span class="pull-right">
+                <button class="btn btn-info float-right" style="display: inline">View</button>
+            </span>
+        </li>
+    </ul>
+    </div>
+</div>

@@ -8,22 +8,28 @@ import { Users } from 'src/app/users-data/users';
   styleUrls: ['./users-list.component.css']
 })
 export class UsersListComponent implements OnChanges {
-  @Input() users$!:Observable<Users[]>;
-  @Input() fullUsersList$!:Observable<Users[]>;
-  @Input() inputSearch!:string;
+  @Input() users$!: Observable<Users[]>;
+  @Input() fullUsersList$!: Observable<Users[]>;
+  @Input() inputSearch!: string;
 
-  ngOnChanges(changes:SimpleChanges){
-    if(changes['inputSearch'].currentValue){
-      this.users$.subscribe(data =>{
-          const result=data.filter(user => 
-           
-            user.name.toLocaleLowerCase().indexOf(this.inputSearch.toLocaleLowerCase()) !== -1);
-            this.users$=of(result);
+
+
+
+
+
+
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['inputSearch'].currentValue) {
+      this.users$.subscribe(data => {
+        const result = data.filter(user =>
+          user.name.toLocaleLowerCase().indexOf(this.inputSearch.toLocaleLowerCase()) !== -1);
+        this.users$ = of(result);
       });
     }
-    else{
-this.users$=this.fullUsersList$;
+    else {
+      this.users$ = this.fullUsersList$;
     }
   }
-    
+
 }
